@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jun Kou Cafe — Product</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brown:#6b4b2b;
+    --accent:#d3a675;
+    --dark:#111;
+    --muted:#666;
+    --bg:#fff;
+  }
+  *{box-sizing:border-box;
+    margin:0;
+    padding:0}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--dark);
+    -webkit-font-smoothing:antialiased}
+  header{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    height:72px;
+    background:#fff;
+    border-bottom:1px solid #eee;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;z-index:50
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px}
+  .logo strong{
+    font-weight:700;
+    color:var(--dark)}
+  .nav{
+    display:flex;gap:18px}
+  .nav a{
+    font-size:14px;
+    color:var(--muted);
+    text-decoration:none;
+    padding:20px 6px}
+  .nav a:hover{
+    color:var(--brown)}
+  .cta-btn{
+    background:var(--brown);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:600}
+  main{
+    max-width:1200px;
+    margin:92px auto;
+    padding:28px}
+  .product-wrap{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:30px;align-items:start}
+  .image-panel{
+    background:var(--brown);
+    border-radius:10px;
+    padding:40px;display:flex;
+    align-items:center;
+    justify-content:center}
+  .image-panel img{
+    max-width:100%;
+    height:auto;border-radius:8px;
+    display:block}
+  .details{background:#fff;border-radius:10px;padding:26px;border:1px solid #f2f2f2}
+  .breadcrumbs{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .title{font-size:22px;font-weight:700;margin-bottom:8px}
+  .desc{color:var(--muted);font-size:14px;margin-bottom:18px;line-height:1.55}
+  .kcal{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .custom-block{margin-bottom:18px}
+  .custom-block label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+  .select{width:100%;padding:10px;border-radius:8px;border:1px solid #eee;background:#fafafa}
+  .add-row{display:flex;gap:12px;align-items:center;margin-top:12px}
+  .add-btn{background:var(--brown);color:#fff;padding:12px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+  .price{font-weight:700;color:var(--dark)}
+  .nutrition{margin-top:20px;border:1px solid #f2f2f2;background:#fafafa;padding:12px;border-radius:8px;font-size:13px;color:var(--muted)}
+  /* responsive */
+  @media (max-width:980px){
+    .product-wrap{grid-template-columns:1fr;gap:18px}
+    .image-panel{padding:18px}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="" alt="" style="height:32px"><strong>Jun Kou</strong></div>
+    <nav class="nav">
+      <a href="ProjectSample.html">Home</a>
+      <a href="Aboutus.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a class="cta-btn" href="#">Sign in</a>
+  </header>
+
+  <main>
+    <div class="product-wrap">
+      <div class="image-panel">
+        <img id="product-image" src="" alt="Product image">
+      </div>
+
+      <aside class="details">
+        <div class="breadcrumbs">Menu / <span id="crumb-category">Cold Coffee</span></div>
+        <div class="title" id="product-title">Product Name</div>
+        <div class="desc" id="product-desc">Short description about this drink — signature espresso with milk and flavours.</div>
+        <div class="kcal" id="product-kcal">237 kcal</div>
+
+        <!-- Customizations -->
+        <div class="custom-block">
+          <label>Size</label>
+          <select class="select" id="size-select">
+            <option>Short</option>
+            <option>Tall</option>
+            <option selected>Grande</option>
+            <option>Venti</option>
+          </select>
+        </div>
+
+        <div class="custom-block">
+          <label>Milk</label>
+          <select class="select" id="milk-select">
+            <option>Whole</option>
+            <option>Semi-skimmed</option>
+            <option>Oat Milk</option>
+            <option>Almond</option>
+          </select>
+        </div>
+
+        <div class="custom-block">
+          <label>Shot</label>
+          <select class="select" id="shot-select">
+            <option>Single</option>
+            <option selected>Double</option>
+            <option>None</option>
+          </select>
+        </div>
+
+        <div class="add-row">
+          <div style="flex:1">
+            <div class="price" id="product-price">₱140</div>
+            <div style="font-size:13px;color:var(--muted)">Estimated price</div>
+          </div>
+          <button class="add-btn" id="add-to-cart">Add to cart</button>
+        </div>
+
+        <div class="nutrition" id="nutrition-box">
+          <strong>Nutrition</strong>
+          <div style="margin-top:8px;font-size:13px;color:var(--muted)">
+            <div>Energy: 237 kcal</div>
+            <div>Fat: 9.5g • Sugar: 27g</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+<script>
+  // read item name from query param
+  function getQueryParam(name){
+    const url = new URL(location.href);
+    return url.searchParams.get(name);
+  }
+
+  // small mapping of product names to images and descriptions
+  const productMap = {
+    "Iced Americano": {
+      img: "https://images.unsplash.com/photo-1509042239860-f8396924c348?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2",
+      desc: "A bold espresso shot poured over ice for a clean, coffee-forward taste.",
+      kcal: "5 kcal",
+      price: "₱110",
+      category: "Cold Coffee"
+    },
+    "Iced Dirty Matcha": {
+      img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1",
+      desc: "Matcha with a shot of espresso poured over ice—creamy and energizing.",
+      kcal: "120 kcal",
+      price: "₱150",
+      category: "Cold Coffee"
+    },
+    "Iced Caffe Latte": {
+      img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6",
+      desc: "Smooth espresso and cold milk poured over ice for a chilled latte.",
+      kcal: "130 kcal",
+      price: "₱140",
+      category: "Cold Coffee"
+    },
+    "Iced Caramel Macchiato": {
+      img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=10",
+      desc: "Vanilla-flavoured milk, finished with espresso and caramel drizzle.",
+      kcal: "210 kcal",
+      price: "₱160",
+      category: "Cold Coffee"
+    },
+    "Iced Spanish Latte": {
+      img: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4",
+      desc: "Rich condensed milk blended with espresso over ice — intensely sweet.",
+      kcal: "270 kcal",
+      price: "₱170",
+      category: "Cold Coffee"
+    }
+  };
+
+  // find product name
+  const name = getQueryParam('name') || 'Product';
+  const product = productMap[name];
+
+  // populate UI
+  const titleEl = document.getElementById('product-title');
+  const descEl = document.getElementById('product-desc');
+  const imageEl = document.getElementById('product-image');
+  const kcalEl = document.getElementById('product-kcal');
+  const priceEl = document.getElementById('product-price');
+  const crumbEl = document.getElementById('crumb-category');
+
+  if (product) {
+    titleEl.textContent = name;
+    descEl.textContent = product.desc;
+    imageEl.src = product.img;
+    imageEl.alt = name;
+    kcalEl.textContent = product.kcal;
+    priceEl.textContent = product.price;
+    crumbEl.textContent = product.category;
+  } else {
+    // fallback / generic
+    titleEl.textContent = decodeURIComponent(name);
+    descEl.textContent = "A delicious drink from Jun Kou Cafe.";
+    imageEl.src = "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1";
+    imageEl.alt = decodeURIComponent(name);
+    kcalEl.textContent = "—";
+    priceEl.textContent = "₱140";
+    crumbEl.textContent = "Drinks";
+  }
+
+  // add to cart button behaviour (demo)
+  document.getElementById('add-to-cart').addEventListener('click', () => {
+    alert(`${titleEl.textContent} added to cart (demo).`);
+  });
+</script>
+</body>
+</html>

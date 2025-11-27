@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jun Kou Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="J_Style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root{
+      --accent:#e4ac74;
+      --dark:#000000;
+      --muted:#5a4839;
+      --hero-overlay: rgba(0, 0, 0, 0.55);
+      --header-height:72px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      background:#fff;
+    }
+
+    /* header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 32px;
+      background: transparent;
+      z-index: 100;
+      transition: background .25s, box-shadow .25s;
+    }
+    header.scrolled{
+      background:#fff;
+      border-bottom:1px solid #eee;
+      box-shadow:0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{height:34px}
+    .logo strong{color:#fff} /* visible on hero */
+
+    /* navigation */
+    .nav{display:flex;gap:22px;align-items:center}
+    .nav a{
+      color:#fff; /* white over hero */
+      text-decoration:none;
+      font-weight:500;
+      padding:22px 6px;
+      transition: color .2s;
+      font-size:0.95rem;
+    }
+    .nav a:hover{ color: var(--accent); }
+    header.scrolled .nav a{ color: var(--dark); }
+    header.scrolled .logo strong{ color: var(--dark); }
+
+    .reserve-btn{
+      background:#fff;color:#000;padding:8px 14px;border-radius:20px;text-decoration:none;font-weight:600;
+    }
+    header.scrolled .reserve-btn{ background:var(--accent); color:#fff; }
+
+    /* HERO (video) */
+    .Background{
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 80px;
+    }
+
+    /* video fill */
+    .Background video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* overlay sits above video */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    .Background-content {
+      max-width: 600px;
+      position: relative;
+      color: #eee;
+      z-index: 2;
+    }
+
+    .Background-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .Background-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .Background-content .btn {
+      background: #fff;
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .Background-content .btn:hover {
+      background: #a07e5a;
+      color: #fff;
+    }
+
+    .socials {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      transform-origin: left center;
+      z-index: 3;
+    }
+
+    .socials a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    .socials a:hover { color: #d3a675; }
+
+    /* MAIN content sections */
+    main{background:#fff}
+    .section{padding:80px 80px;background:#ffffff}
+    .about{display:flex;gap:40px;align-items:center}
+    .about .text{flex:1}
+    .about .image{flex:1}
+    .about img{width:100%;border-radius:12px}
+
+    .best-sellers{padding:60px 80px;background:#fafafa}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(255,255,255,0.06);text-align:center}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+
+    /* motto band */
+    .motto-band{padding:60px 80px;background:#fff;display:flex;justify-content:center}
+    .moto-wrap{position:relative;width:100%;max-width:900px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .moto-bg{position:absolute;inset:0;background:url('https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/516837500_122122700210858927_776596958845662516_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mfOTkwOpzGAQ7kNvwFDfiul&_nc_oc=AdkFJtjGatTw3RJt35Nm1Ph5UuJUxnO6zt32b44dXdbnjV0-6r5LuQxHM5roqZ-E7hUbN0RYWFtw5MNXtPQ1n6JU&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=l3IrdDHS9M9T_HX0oUDZwA&oh=00_AfgBnNNEVEQpZpO2LhmhpQvDMVXqJfQC6K1A0W_n32ohdA&oe=69153024') center/cover no-repeat;opacity:.60}
+    .moto-content{position:relative;padding:48px 36px;text-align:center}
+    .moto-content h2{font-size:28px;margin-bottom:12px}
+    .moto-content p{color:var(--muted);margin-bottom:18px}
+    .order-btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 26px;border-radius:28px;text-decoration:none;font-weight:600}
+
+    footer{padding:40px 80px;border-top:1px solid #eee;color:#6e6e6e}
+
+    /* responsive */
+    @media (max-width:900px){
+      .Background{padding:0 28px}
+      .Background-content h1{font-size:2.4rem}
+      .about{flex-direction:column}
+      .motto-band{padding:32px}
+      .socials {
+        flex-direction: column;
+        transform: none;
+        left: 10px;
+        top: auto;
+        bottom: 10px;
+      }
+      header { padding: 0 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="site-header">
+    <div class="logo">
+      <img src="" alt="">
+      <strong style="color:#ffffff"> Jun Kou Cafe
+      </strong>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="About_us_JK.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="FAQ_2.html">FAQ</a>
+      <a href="#">Contact Us</a>
+    </nav>
+
+    <a href="Sign_in_JK.html" class="reserve-btn"> Sign in</a>
+  </header>
+
+  <!-- VIDEO HERO: replace previous static hero -->
+  <section class="Background" aria-label="Hero">
+    <!-- autoplaying, muted, playsinline for mobile, loop -->
+    <video id="hero-video" autoplay muted loop playsinline poster="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/516837500_122122700210858927_776596958845662516_n.jpg" aria-hidden="true">
+      <!-- put your 23s mp4 at videos/hero.mp4 or update this path -->
+      <source src="PNG/1.mp4" type="video/mp4">
+      <!-- fallback text -->
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="Background-content">
+      <h1>Jun Kou Cafe</h1>
+      <p>Brewed with Memory</p>
+      <a href="#" class="btn">About Us</a>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61575767829526" target="_blank" rel="noreferrer">Facebook</a>
+      <a href="https://www.instagram.com/junkou_cafe/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.tiktok.com/@junkoucoffee_" target="_blank" rel="noreferrer">TikTok</a>
+    </div>
+  </section>
+
+<main>
+  <section id="about" class="section about">
+    <div class="text">
+  <h2> About Jun kou Cafe</h2>
+  <p style="color: var(--muted);margin: 12px 0 18px"> Jun kou Cafe is acozy neighbourhood spot where we brew with memories. </p>
+  <p style="color: var(--muted);margin-bottom:18px;"> Our aim is to...</p>
+  </div>
+  <div class="image"><img src="https://scontent.fmnl7-2.fna.fbcdn.net/v/t39.30808-6/539606369_122132261672858927_3652946495304032137_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9b8iEWAjQKoQ7kNvwGGAnl7&_nc_oc=AdkjBrRus8r8LEYRbbuzX-_8TuTk0ub2mLDt4asNN-ENXERJPd5EXHnyYx1bVamSh2QdIiGIZDezSd4aoW-Z4aeu&_nc_zt=23&_nc_ht=scontent.fmnl7-2.fna&_nc_gid=rKiHVEisb0SRrmccHR1dHw&oh=00_Afgb4H-WGvaeibwTgTLhtjyTfWdFCzsW_EpH8EPngrGa3w&oe=6919A850" alt="interior"></div>
+  </section>
+
+  <section class="best-sellers">
+      <h2 style="margin-bottom:18px">Best Sellers</h2>
+      <div class="grid">
+        <div class="card"><img src="" alt="Latte"><h3 style="margin:6px 0">Caramel Latte</h3><p style="color:var(--muted)">Sweet and creamy.</p></div>
+        <div class="card"><img src="">Double Espresso</h3><p style="color:var(--muted)">Bold and rich.</p></div>
+        <div class="card"><img src="">Biscoff late</h3><p style="color:var(--muted)">Biscoff blend.</p></div>
+      </div>
+    </section>
+
+
+ <!-- MOTO BAND -->
+    <section class="motto-band">
+      <div class="moto-wrap">
+        <div class="moto-bg"></div>
+        <div class="moto-content">
+          <h2>"Brewed with Memories"</h2>
+          <p>Every cup tells a story.</p>
+          <a href="menu.html" class="order-btn">Order</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Jun Kou Cafe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // change header styles when user scrolls past the hero so page feels like it "turns white"
+    const header = document.getElementById('site-header');
+    const hero = document.querySelector('.Background');
+
+    function onScroll(){
+      if (!hero) return;
+      if(window.scrollY > hero.offsetHeight - 80){
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    // run once to initialize
+    onScroll();
+  </script>
+</body>
+</html>

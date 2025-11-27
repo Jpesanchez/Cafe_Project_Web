@@ -1,0 +1,145 @@
+/* J_Style.css
+   Shared project stylesheet for "Jun Kou" pages.
+   Provides "tags" / badges, meta rows, and simple content helpers
+   so teammates know what each block is for.
+*/
+
+/* Root variables - edit to match your brand */
+:root{
+  --brand-dark:#3b320b;    /* dark brown/green */
+  --brand-accent:#d3a675;  /* warm accent */
+  --muted:#6b6b6b;
+  --ui-bg:#ffffff;
+  --tag-bg:#f3f3f3;
+  --tag-color:#111;
+  --page-padding:24px;
+  --max-width:1200px;
+  --radius:8px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace;
+}
+
+/* Page container (optional utility you can wrap your page content in) */
+.jk-container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding: var(--page-padding);
+  color:var(--tag-color);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height:1.45;
+}
+
+/* --------- TAG / BADGE styles --------- */
+/* A small badge used to label blocks (example: "Header — Navigation") */
+.jk-tag {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.85rem;
+  padding:6px 10px;
+  background:var(--tag-bg);
+  color:var(--tag-color);
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+  margin-right:8px;
+}
+
+/* Accent variants */
+.jk-tag--accent { background: var(--brand-accent); color: #fff; border-color: rgba(0,0,0,0.06); }
+.jk-tag--dark   { background: var(--brand-dark); color: #fff; border-color: rgba(0,0,0,0.06); }
+.jk-tag--muted  { background: transparent; color: var(--muted); border: 1px dashed rgba(0,0,0,0.06); }
+
+/* Small descriptive label under a heading */
+.jk-meta {
+  display:block;
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* Group of tags (keeps spacing consistent) */
+.jk-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0 18px;
+}
+
+/* --------- SECTION helpers --------- */
+.jk-section {
+  padding:18px;
+  background:#fff;
+  border-radius:var(--radius);
+  border:1px solid #f0f0f0;
+  margin-bottom:18px;
+}
+
+/* Section header with built-in tag area */
+.jk-section__header {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+.jk-section__title { font-size:1.05rem; font-weight:700; color:var(--tag-color); margin-bottom:6px; }
+.jk-section__subtitle { font-size:0.9rem; color:var(--muted); }
+
+/* Quick inline field for collaborator notes */
+.jk-note {
+  font-size:0.88rem;
+  color:var(--muted);
+  background:#fbfbfb;
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid #eee;
+}
+
+/* --------- SMALL UI / DEBUG helpers --------- */
+/* A labeled box showing "what this block is for" */
+.jk-purpose {
+  display:inline-block;
+  font-size:0.9rem;
+  color:var(--brand-dark);
+  background: linear-gradient(180deg, #fff 0%, #faf6f0 100%);
+  border:1px solid rgba(0,0,0,0.04);
+  padding:8px 10px;
+  border-radius:6px;
+}
+
+/* File / component badge (useful in the top-left of a section) */
+.jk-file {
+  font-family: var(--mono);
+  font-size:0.82rem;
+  color:var(--muted);
+  background:#fff;
+  border-radius:6px;
+  padding:6px 8px;
+  border:1px solid #f0f0f0;
+}
+
+/* Code block style for snippets you share */
+.jk-code {
+  display:block;
+  width:100%;
+  overflow:auto;
+  background:#0f1720;
+  color:#dbeafe;
+  padding:12px;
+  border-radius:8px;
+  font-family:var(--mono);
+  font-size:0.9rem;
+  margin-top:10px;
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+/* Simple print-safe adjustments */
+@media print {
+  .jk-tag, .jk-note { box-shadow:none; border:none; background:#efefef; color:#000; }
+  .jk-container { padding:12px; }
+}
+
+/* Responsive tiny tweaks */
+@media (max-width:700px){
+  .jk-tags { gap:6px; }
+  .jk-section { padding:12px; }
+}
