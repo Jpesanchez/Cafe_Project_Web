@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!--
+    DEVELOPER 🔵 - JP
+    Project: Jun Kou Cafe
+    File: J1_Home_Page.html
+    Purpose: Shared copy for group work 
+  -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jun Kou Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="J1test.css">
+  <link rel="stylesheet" href="J2test.css">
+  
+
+</head>
+
+<body>
+  <header id="site-header">
+    <div class="logo">
+      <img src="" alt="">
+      <strong style="color:#ffffff"> Jun Kou Cafe
+      </strong>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="J1_Home_Page.html">Home</a>
+      <a href="J2_About_Us.html" >About Us</a>
+      <a href="J3_Menu.html">Menu</a>
+      <a href="J4_FAQ.html">FAQ</a>
+      <a href="J5_Contact_Us.html">Contact Us</a>
+    </nav>
+
+    <a href="J6_Sign_in.html" class="reserve-btn"> Sign in</a>
+  </header>
+
+  <!-- VIDEO BG -->
+  <section class="Background" aria-label="Hero">
+    <video id="hero-video" autoplay muted loop playsinline poster="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/516837500_122122700210858927_776596958845662516_n.jpg" aria-hidden="true">
+      <source src="PNG_Product/1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="Background-content">
+      <h1>Jun Kou Cafe</h1>
+      <p>Brewed with Memory</p>
+      <a href="#" class="btn">About Us</a>
+    </div>
+
+    <!-- <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61575767829526" target="_blank" rel="noreferrer">Facebook</a>
+      <a href="https://www.instagram.com/junkou_cafe/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.tiktok.com/@junkoucoffee_" target="_blank" rel="noreferrer">TikTok</a>
+    </div> -->
+  </section>
+
+<main>
+  <section id="about" class="section about">
+    <div class="text">
+  <h2> About Jun kou Cafe</h2>
+  <p style="color: var(--muted);margin: 12px 0 18px"> Jun kou Cafe is acozy neighbourhood spot where we brew with memories. </p>
+  <p style="color: var(--muted);margin-bottom:18px;"> Our aim is to...</p>
+  </div>
+  <div class="image"><img src="PNG_Product/Owner.jpg" alt="interior"></div>
+  </section>
+
+  <section class="best-sellers">
+      <h2 style="margin-bottom:18px">Best Sellers</h2>
+      <div class="grid">
+        <div class="card"><img src="PNG_Product/Coffee1.jpg" alt="Latte"><h3 style="margin:6px 0">Caramel Latte</h3><p style="color:var(--muted)">Sweet and creamy.</p></div>
+        <div class="card"><img src="PNG_Product/Caffe2.jpg">Double Espresso</h3><p style="color:var(--muted)">Bold and rich.</p></div>
+        <div class="card"><img src="PNG_Product/EdibleCup2.jpg">Biscoff late</h3><p style="color:var(--muted)">Biscoff blend.</p></div>
+      </div>
+    </section>
+
+
+ <!-- MOTO BAND -->
+    <section class="motto-band">
+      <div class="moto-wrap">
+        <div class="moto-bg"></div>
+        <div class="moto-content">
+          <h2>"Brewed with Memories"</h2>
+          <p>Every cup tells a story.</p>
+          <a href="J3_Menu.html" class="order-btn">Order</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Jun Kou Cafe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    const hero = document.querySelector('.Background');
+
+    function onScroll(){
+      if (!hero) return;
+      if(window.scrollY > hero.offsetHeight - 80){
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  </script>
+</body>
+</html>

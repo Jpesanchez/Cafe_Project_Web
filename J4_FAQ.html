@@ -1,173 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+   <!--
+    DEVELOPER 🔵 - JP
+    Project: Jun Kou Cafe
+    File: J4_FAQe.html
+    Purpose: Shared copy for group work 
+  -->
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FAQ — Jun kou Cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Jun Kou Cafe</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html,body { height: 100%; }
-    :root{
-      --accent:#3b320b;
-      --muted:#6b6b6b;
-      --dark:#222;
-      --divider:#e7e7e7;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--dark);
-      background: #fff;
-    }
-
-    /* Header: matched to your Menu / Site header */
-    header{
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 0 32px;
-      background:#fff;
-      z-index:60;
-      border-bottom:1px solid var(--divider);
-    }
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:34px}
-    navigator ul, nav ul { list-style: none; display:flex; gap:18px; align-items:center; }
-    navigator ul li a, nav ul li a {
-      color: var(--dark);
-      text-decoration: none;
-      font-size:14px;
-      padding: 20px 6px;
-      font-weight:500;
-    }
-    navigator ul li a:hover, nav ul li a:hover { color: var(--accent); }
-
-    .cta-btn, .reserve-btn {
-      background: #fff;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .cta-btn:hover, .reserve-btn:hover { background: var(--accent); color: #fff; }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 140px 20px 60px;
-    }
-
-    .hero {
-      background: #f8f8f8;
-      padding: 28px;
-      border-radius: 10px;
-      margin-bottom: 28px;
-    }
-    .hero h1 { font-size: 1.8rem; color: #111; margin-bottom: 8px; }
-
-    section { margin-bottom: 28px; }
-    h2 { color: #111; margin-bottom: 10px; font-size: 1.25rem; }
-    .faq-item {
-      padding: 14px;
-      border-radius: 8px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.06);
-      margin-bottom: 12px;
-    }
-    h3 { font-size: 1.05rem; color: #333; }
-
-    .answer {
-      margin-top: 6px;
-      color: #555;
-      font-size: 0.95rem;
-      font-style: italic;
-    }
-
-    footer {
-      border-top: 1px solid rgba(0,0,0,0.06);
-      padding: 18px 0;
-      text-align:center;
-      color:#666;
-      font-size:0.9rem;
-    }
-
-    @media (max-width:900px){
-      header { padding: 0 16px; height:72px }
-      main { padding: 120px 16px 40px; }
-      navigator ul, nav ul { gap:12px; }
-    }
-  </style>
+  <link rel="stylesheet" href="J_Style.css">
+  <link rel="stylesheet" href="J_Global.css">
 </head>
-<body>
+<style>
 
-  <header>
+.faq-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 20px 60px;
+}
+
+  /* Hero / Intro */
+.faq-page .hero {
+  background: #f8f8f8;
+  padding: 28px;
+  border-radius: 15px;
+  margin-bottom: 70px;
+}
+.faq-page .hero h1 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+/* Section Titles */
+.faq-section {
+  margin-bottom: 34px;
+}
+
+.faq-section h2 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* FAQ Items */
+.faq-item {
+  background: #f7f7f7;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--divider);
+  margin-bottom: 14px;
+  transition: 0.2s;
+}
+.faq-item:hover {
+  border-color: var(--accent);
+  background: #81818136;
+}
+.faq-item h3 {
+  font-size: 1.05rem;
+  color: #1d1d1d;
+  font-weight: 600;
+}
+.faq-item .answer {
+  margin-top: 6px;
+  color: #555;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+@media (max-width:900px) {
+  .faq-page {
+    padding: 120px 16px 40px;
+  }
+}
+
+</style>
+
+<body class="not-home"> 
+
+  <header id="site-header">
     <div class="logo">
-      <img src="" alt="Jun kou Cafe logo">
+      <img src="" alt="">
+      <strong>Jun Kou Cafe</strong>
     </div>
+  
 
-    <!-- navigation now matches your Menu page header -->
-    <navigator aria-label="Main navigation">
-      <ul>
-        <li><a href="ProjectSample.html">Home</a></li>
-        <li><a href="About_us_JK.html">About Us</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="BRR BRR patapim.html">FAQ</a></li>
-        <li><a href="Contact Us page JUNKOU.html">Contact Us</a></li>
-      </ul>
-    </navigator>
+    <nav class="nav">
+      <a href="J1_Home_Page.html">Home</a>
+      <a href="J2_About_Us.html">About Us</a>
+      <a href="J3_Menu.html">Menu</a>
+      <a href="J4_FAQ.html" class="active" >FAQ</a>
+      <a href="J5_Contact_Us.html">Contact Us</a>
+    </nav>
 
-    <a class="reserve-btn" href="Sign_in_JK.html">Sign in</a>
+    <a class="reserve-btn" href="J6_Sign_in.html">Sign in</a>
   </header>
 
-  <main>
+
+  <main class="faq-page">
 
     <section class="hero">
       <h1>Frequently Asked Questions</h1>
       <p>Browse our most commonly asked questions below.</p>
     </section>
 
+    
     <!-- Store & Amenities -->
-    <section>
+    <section class="faq-section">
       <h2>Store & Amenities</h2>
 
       <div class="faq-item">
-        <h3>What are your hours? (Weekdays and weekends)</h3>
-        <p class="answer">We are open Monday to Sunday 1:00pm to 12:00am.</p>
+        <h3>What are your hours?</h3>
+        <p class="answer">We are open Monday to Sunday, 1:00 PM to 12:00 AM.</p>
       </div>
 
       <div class="faq-item">
         <h3>Do you have free Wi-Fi?</h3>
-        <p class="answer">Yes we do.</p>
+        <p class="answer">Yes, we do.</p>
       </div>
 
       <div class="faq-item">
         <h3>Is there seating available for studying or work?</h3>
-        <p class="answer">We have plenty of seats outside our store and inside.</p>
+        <p class="answer">Yes — both indoor and outdoor seating are available.</p>
       </div>
 
       <div class="faq-item">
         <h3>Do you offer any loyalty programs or rewards?</h3>
-        <p class="answer">We are working on it.</p>
+        <p class="answer">We are currently working on it.</p>
       </div>
 
       <div class="faq-item">
         <h3>Do you take reservations?</h3>
-        <p class="answer">We take reservations only for the outside seats.</p>
+        <p class="answer">We accept reservations for outdoor seating only.</p>
       </div>
     </section>
 
+
     <!-- Menu & Drinks -->
-    <section>
+    <section class="faq-section">
       <h2>Menu & Drinks</h2>
 
       <div class="faq-item">
@@ -176,17 +151,17 @@
       </div>
 
       <div class="faq-item">
-        <h3>Can I buy bags of your coffee beans to brew at home?</h3>
-        <p class="answer">Unfortunately we do not.</p>
+        <h3>Can I buy coffee beans to brew at home?</h3>
+        <p class="answer">Unfortunately, we currently do not sell beans.</p>
       </div>
 
       <div class="faq-item">
-        <h3>Do you offer dairy-free milk alternatives? (e.g., oat, almond, soy)</h3>
-        <p class="answer">We have plenty of alternatives</p>
+        <h3>Do you offer dairy-free milk alternatives?</h3>
+        <p class="answer">Yes — we have oat, almond, soy, and more.</p>
       </div>
 
       <div class="faq-item">
-        <h3>Are there vegan or gluten-free food options?</h3>
+        <h3>Are there vegan or gluten-free options?</h3>
         <p class="answer">Your answer here...</p>
       </div>
 
@@ -196,42 +171,44 @@
       </div>
 
       <div class="faq-item">
-        <h3>What is your menu for light meals and snacks?</h3>
+        <h3>Do you have light meals and snacks?</h3>
         <p class="answer">Your answer here...</p>
       </div>
     </section>
 
+
     <!-- Policies & Events -->
-    <section>
+    <section class="faq-section">
       <h2>Policies & Events</h2>
 
       <div class="faq-item">
-        <h3>Do you host events or live music nights?</h3>
+        <h3>Do you host events or live music?</h3>
         <p class="answer">Your answer here...</p>
       </div>
 
       <div class="faq-item">
-        <h3>What is your policy on outside food or drinks?</h3>
+        <h3>What is your policy on outside food?</h3>
         <p class="answer">Your answer here...</p>
       </div>
 
       <div class="faq-item">
-        <h3>Can I rent the space for a private event?</h3>
+        <h3>Can the space be rented for private events?</h3>
         <p class="answer">Your answer here...</p>
       </div>
 
       <div class="faq-item">
-        <h3>Do you have a lost and found?</h3>
+        <h3>Do you have lost and found?</h3>
         <p class="answer">Your answer here...</p>
       </div>
     </section>
 
+
     <!-- Coffee Education -->
-    <section>
+    <section class="faq-section">
       <h2>Coffee Education</h2>
 
       <div class="faq-item">
-        <h3>What is the difference between light and dark roast coffee?</h3>
+        <h3>What is the difference between light and dark roast?</h3>
         <p class="answer">Your answer here...</p>
       </div>
 
@@ -244,8 +221,9 @@
 
   </main>
 
+
   <footer>
-    <p>&copy; <span id="year"></span> Jun kou Cafe — All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Jun Kou Cafe — All rights reserved.</p>
   </footer>
 
   <script>

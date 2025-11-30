@@ -1,0 +1,97 @@
+<section class="people-section">
+
+  <h2 class="people-title">Meet the People Behind Jun Kou Café</h2>
+
+  <!-- Founder -->
+  <div class="person-block">
+    <img src="IMG/founder.jpg" alt="Founder">
+    <h3>Founder</h3>
+  </div>
+
+  <!-- Head Barista -->
+  <div class="person-block">
+    <img src="IMG/head_barista.jpg" alt="Head Barista">
+    <h3>Head Barista</h3>
+  </div>
+
+  <!-- Team Gallery -->
+  <div class="people-grid">
+    <img src="IMG/team1.jpg" alt="Team Photo 1">
+    <img src="IMG/team2.jpg" alt="Team Photo 2">
+    <img src="IMG/team3.jpg" alt="Team Photo 3">
+    <img src="IMG/team4.jpg" alt="Team Photo 4">
+  </div>
+
+</section>
+
+
+
+css
+
+/* ===== PEOPLE SECTION ===== */
+.people-section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* Title */
+.people-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ===== INDIVIDUAL PEOPLE (Founder / Head Barista) ===== */
+.person-block {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.person-block:nth-child(2) { animation-delay: 0.2s; }
+.person-block:nth-child(3) { animation-delay: 0.4s; }
+
+.person-block img {
+  width: 350px;
+  max-width: 90%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* ===== GRID GALLERY FOR TEAM ===== */
+.people-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.people-grid img {
+  width: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeIn 1s forwards;
+}
+
+.people-grid img:nth-child(1) { animation-delay: 0.1s; }
+.people-grid img:nth-child(2) { animation-delay: 0.2s; }
+.people-grid img:nth-child(3) { animation-delay: 0.3s; }
+.people-grid img:nth-child(4) { animation-delay: 0.4s; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

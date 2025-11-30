@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+    DEVELOPER 🔵 - JP
+    Project: Jun Kou Cafe
+    File: J2_About_Us.html
+    Purpose: Shared copy for group work 
+  -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us — Jun Kou Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="J1test.css">
+  <link rel="stylesheet" href="J2test.css">
+
+</head>
+
+<style>
+.page-container {
+  padding: calc(var(--header-height) + 40px) 20px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.about-section {
+  background: #f9f9f9;
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.about-section h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.about-section p {
+  margin-bottom: 16px;
+  color: #333;
+}
+.about-section .mission {
+  font-style: italic;
+  color: #555;
+}
+.team {
+  margin-top: 30px;
+}
+.team h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.cta {
+  margin-top: 100px;
+  text-align: center;
+}
+.cta .btn {
+  background: var(--dark);
+  padding: 12px 24px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cta .btn:hover {
+  background: #81664a;
+}
+
+.reserve-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+</style>
+
+<body class="not-home">
+  
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <h1>About Us</h1>
+  </section>
+
+
+  <header id="site-header">
+    <div class="logo">
+      <img src="" alt="">
+      <strong>Jun Kou Cafe</strong>
+    </div>
+
+    <nav class="nav">
+      <a href="J1_Home_Page.html">Home</a>
+      <a href="J2_About_Us.html" class="active">About Us</a>
+      <a href="J3_Menu.html">Menu</a>
+      <a href="J4_FAQ.html">FAQ</a>
+      <a href="J5_Contact_Us.html">Contact Us</a>
+    </nav>
+
+    <a href="J6_Sign_in.html" class="reserve-btn">Sign In</a>
+  </header>
+
+  <main class="page-container">
+
+    <section class="about-section">
+      <h1>About Jun Kou Cafe</h1>
+
+      <p>
+        Welcome to <strong>Jun Kou Cafe</strong>, a cozy and modern neighborhood café built on the love of 
+        handcrafted drinks, good food, and a warm space where people can relax, work, or connect.
+      </p>
+
+      <p class="mission">
+        Our mission is to create a welcoming environment while serving clean, comforting, and beautifully crafted beverages.
+      </p>
+
+      <p>
+        Inspired by simple living and meaningful conversations, we strive to make every visit feel special — whether you’re grabbing
+        your morning cup, catching up with friends, or finding a peaceful corner to unwind.
+      </p>
+
+      <p>
+        Jun-kou is more than a coffee shop— it’s a tribute. It was built with love, not just for coffee, but for connection with each other and comfort. It was created for you to feel at home. Born from “Jhun ko,” the cherished nickname of a father whose quiet strength and warmth inspire us every day.
+      </p>
+
+      <p>
+        <strong>Brand Story / Essence</strong><br>
+        Jun-kou is a name rooted in love, memory, and quiet strength. Inspired by the nickname "Jhun ko" — a tribute to a beloved father — the name embodies purity, warmth, and the comforting presence of home. “純” (jun in Japanese), means "pure" or "innocent."
+      </p>
+
+      <!-- TEAM SECTION -->
+      <div class="team">
+        <h2>Our Team</h2>
+
+        <p><strong>Jun — Founder</strong><br>
+        The heart behind Jun Kou Cafe. Jun is passionate about creating a space where people can breathe, pause,
+        and enjoy good coffee prepared with intention.</p>
+
+        <p><strong>Kou — Head Barista</strong><br>
+        Known for precision, creativity, and kindness. Kou ensures every beverage is made with consistency and care.</p>
+      </div>
+
+      <div class="cta">
+        <a href="menu.html" class="btn">See Our Menu</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Jun-kou Cafe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    function onScroll() {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

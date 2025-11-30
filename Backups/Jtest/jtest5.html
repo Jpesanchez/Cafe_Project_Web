@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    DEVELOPER BADGE
+    Project: Jun Kou Cafe
+    File: J6_Sign_in.html
+    Purpose: Shared copy for group work — includes J_Style.css link & visible dev badge
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Jun kou Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Jtest.css">
+  <style>
+    #dev-badge{position:fixed;top:10px;left:10px;background:#222;color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;z-index:99999;opacity:0.95;font-weight:600;pointer-events:none}
+  </style>
+  <style>
+    /* GLOBAL */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background: #fff;   /* white background */
+      color: #000;        /* black text */
+      min-height: 100vh; 
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background: rgba(255, 255, 255, 0.85); /* white transparent bar */
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid #ddd;
+      z-index: 100;
+    }
+
+    .logo img { height: 40px; }
+
+    navigator ul { 
+      list-style: none; 
+      display: flex; 
+      gap: 30px; 
+      align-items:center; 
+    }
+    navigator ul li a {
+      color: #000; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: 0.3s;
+    }
+    navigator ul li a:hover { color: #666; } /* gray hover */
+
+    .reserve-btn {
+      background: #000; 
+      color: #fff; 
+      padding: 10px 20px; 
+      border-radius: 50px;
+      font-weight: 600; 
+      text-decoration: none; 
+      transition: 0.3s;
+    }
+    .reserve-btn:hover { 
+      background: #fff; 
+      color: #000; 
+      border: 1px solid #000;
+    }
+
+    /* SIGN-IN SECTION */
+    main { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      padding: 140px 20px 60px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #fafafa; /* light gray panel */
+      border: 1px solid #ddd;
+      padding: 36px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #000;
+    }
+    .card p.lead {
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* FORM */
+    form { display: grid; gap: 14px; }
+
+    label { 
+      font-size: 13px; 
+      color: #333; 
+      margin-bottom:6px; 
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #000;
+      font-size: 14px;
+    }
+    input::placeholder { color: #888; }
+
+    .row {
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+    }
+
+    .checkbox {
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      color: #444; 
+      font-size:13px;
+    }
+
+    button[type="submit"]{
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #000;
+      font-weight: 700;
+      cursor: pointer;
+      background: #000;
+      color: #fff;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    a.forgot {
+      text-align: right;
+      font-size: 13px;
+      color: #555;
+      text-decoration: none;
+    }
+    a.forgot:hover { color: #000; }
+
+    .alt {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #444;
+    }
+    .alt a { 
+      color: #000; 
+      text-decoration: underline; 
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:600px){
+      header { padding: 14px 20px; }
+      navigator ul { gap: 14px; font-size: 14px; }
+      .card { padding: 24px; margin: 0 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="dev-badge">Jun Kou — Draft (group)</div>
+
+  <header>
+    <div class="logo">
+      <img src="" alt="Jun kou Cafe">
+    </div>
+
+    <navigator>
+      <ul>
+        <li><a href="J1_Home_Page.html">Home</a></li>
+        <li><a href="J2_About_Us.html">About Us</a></li>
+        <li><a href="J3_Menu.html">Menu</a></li>
+        <li><a href="J6_Sign_in.html">Sign In</a></li>
+        <li><a href="J4_FAQ.html">FAQ</a></li>
+        <li><a href="J5_Contact_Us.html">Contact Us</a></li>
+      </ul>
+    </navigator>
+
+    <a href="J6_Sign_in.html" class="reserve-btn"> Sign In</a>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>Sign in to your account</h1>
+      <p class="lead">Welcome back — enter your details to continue.</p>
+
+      <form action="#" method="post">
+        <div>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required />
+        </div>
+
+        <div class="row">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Sign in</button>
+          <div class="alt">
+            Don’t have an account? <a href="#">Create one</a>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

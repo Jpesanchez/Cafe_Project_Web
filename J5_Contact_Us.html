@@ -1,158 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+   <!--
+    DEVELOPER 🔵 - JP
+    Project: Jun Kou Cafe
+    File: J5_Contact_Us.html
+    Purpose: Shared copy for group work — includes J_Style.css link
+  -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us — Jun kou Cafe</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; color: #111; background: #fafafa; line-height: 1.5; }
-
-    :root{
-      --accent:#3b320b;
-      --muted:#6b6b6b;
-      --dark:#222;
-      --divider:#e7e7e7;
-    }
-
-    /* Header: matched to Menu / Featured pages */
-    header{
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 0 32px;
-      background: #fff;
-      z-index: 60;
-      border-bottom: 1px solid var(--divider);
-    }
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:34px; display:block}
-    navigator ul, nav ul { list-style: none; display:flex; gap:18px; align-items:center; }
-    navigator ul li a, nav ul li a {
-      color: var(--dark);
-      text-decoration: none;
-      font-size:14px;
-      padding: 20px 6px;
-      font-weight:500;
-    }
-    navigator ul li a:hover, nav ul li a:hover { color: var(--accent); }
-
-    .reserve-btn {
-      background:#fff;
-      color:#000;
-      padding:10px 20px;
-      border-radius:50px;
-      font-weight:600;
-      text-decoration:none;
-      transition:0.2s;
-    }
-    .reserve-btn:hover { background:var(--accent); color:#fff; }
-
-    /* Page content */
-    main {
-      max-width: 1000px;
-      margin: 150px auto 80px; /* account for fixed header */
-      padding: 0 20px;
-    }
-
-    .hero {
-      background: #fff;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      margin-bottom: 24px;
-    }
-    .hero h1 { font-size: 34px; margin-bottom: 8px; color: #111; }
-    .hero p.lead { font-size: 16px; color: #444; margin-bottom: 16px; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 20px;
-      align-items: start;
-    }
-
-    form.contact-form {
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-    }
-
-    .field { margin-bottom: 12px; }
-    label { display:block; font-size: 13px; margin-bottom:6px; color:#333; }
-    input[type="text"], input[type="email"], textarea, select {
-      width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:6px; font-size:14px; background:#fff; color:#111;
-    }
-    textarea { min-height:120px; resize: vertical; }
-
-    .btn {
-      display:inline-block; padding:10px 18px; background:var(--accent); color:#fff; text-decoration:none; border-radius:999px; font-weight:600; border:none; cursor:pointer;
-    }
-
-    .side { background:#fff; padding:20px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
-    .side h3 { margin-bottom:8px; color:#111; }
-    .side p, .side a { color:#444; font-size:14px; text-decoration:none; }
-
-    .socials { margin-top:12px; }
-    .socials a { display:inline-block; margin-right:10px; text-decoration:none; color:#444; font-size:14px; }
-
-    footer {
-      max-width: 1000px;
-      margin: 40px auto 40px;
-      padding: 0 20px;
-      color:#666;
-      font-size:13px;
-      text-align:center;
-    }
-
-    @media (max-width: 880px) {
-      .grid { grid-template-columns: 1fr; }
-      header { padding: 0 16px; }
-      main { margin: 120px 12px 60px; }
-    }
-  </style>
+  <link rel="stylesheet" href="J_Style.css">
+  <link rel="stylesheet" href="J_Global.css">
 </head>
-<body>
 
-  <header>
+<style>
+  body.not-home {
+  background: #fafafa;
+}
+
+/* Page Layout */
+main {
+  max-width: 1000px;
+  margin: 150px auto 80px;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+  color: #111;
+}
+.hero .lead {
+  font-size: 16px;
+  color: #444;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+}
+
+/* Contact Form */
+.contact-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+.contact-form h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #111;
+}
+.contact-form .desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 16px;
+}
+.field {
+  margin-bottom: 12px;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #333;
+}
+input,textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  color: #111;
+}
+textarea {
+  min-height: 120px;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Side Info Panel */
+.side {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+.side h3 {
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.side p,.side a {
+  font-size: 14px;
+  color: #444;
+}
+.socials {
+  margin-top: 12px;
+}
+.side hr {
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    margin: 120px 20px 60px;
+  }
+}
+</style>
+
+<body class="not-home">
+
+  <header id="site-header">
     <div class="logo">
-      <img src="" alt="Jun kou Cafe logo">
+      <img src="" alt="">
+      <strong>Jun Kou Cafe</strong>
     </div>
+  
 
-    <!-- navigation now matches Menu / Featured pages -->
-    <navigator aria-label="Main navigation">
-      <ul>
-        <li><a href="ProjectSample.html">Home</a></li>
-        <li><a href="About_us_JK.html">About Us</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="BRR BRR patapim.html">FAQ</a></li>
-        <li><a href="Contact Us page JUNKOU.html">Contact Us</a></li>
-      </ul>
-    </navigator>
+    <nav class="nav">
+      <a href="J1_Home_Page.html">Home</a>
+      <a href="J2_About_Us.html">About Us</a>
+      <a href="J3_Menu.html">Menu</a>
+      <a href="J4_FAQ.html">FAQ</a>
+      <a href="J5_Contact_Us.html" class="active" >Contact Us</a>
+    </nav>
 
-    <a href="Sign_in_JK.html" class="reserve-btn">Sign in</a>
+    <a class="reserve-btn" href="J6_Sign_in.html">Sign in</a>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="contact-title">
-      <h1 id="contact-title">Contact Us</h1>
+    <section class="hero">
+      <h1>Contact Us</h1>
       <p class="lead">We’d love to hear from you. Use the form to send us a message, or connect with us on social media.</p>
     </section>
 
-    <section class="grid" aria-labelledby="contact-form-heading">
-      <!-- Left: contact form -->
+    <section class="grid">
+      <!-- Contact Form -->
       <div>
-        <form class="contact-form" action="#" method="post" aria-describedby="contact-form-desc" novalidate>
-          <h2 id="contact-form-heading" style="margin-bottom:12px; font-size:18px; color:#111;">Send us a message</h2>
-          <p id="contact-form-desc" style="font-size:13px; color:#555; margin-bottom:16px;">Fill out the fields below and we'll get back to you as soon as we can.</p>
+        <form class="contact-form" action="#" method="post" novalidate>
+          <h2>Send us a message</h2>
+          <p class="desc">Fill out the fields below and we'll get back to you as soon as we can.</p>
 
           <div class="field">
             <label for="name">Full name</label>
@@ -174,40 +193,36 @@
             <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
           </div>
 
-          <div style="margin-top:12px;">
-            <button type="submit" class="btn">Send Message</button>
-          </div>
+          <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
 
-      <!-- Right: contact details / connect -->
-      <aside class="side" aria-labelledby="connect-heading">
-        <h3 id="connect-heading">Connect with us</h3>
+      <!-- Side Info -->
+      <aside class="side">
+        <h3>Connect with us</h3>
         <p>Follow us and send a message on our social channels:</p>
 
-        <div class="socials" aria-hidden="false">
-          <a href="https://www.facebook.com/profile.php?id=61575767829526" target="_blank" rel="noreferrer">Facebook</a><br>
-          <a href="https://www.instagram.com/junkou_cafe/" target="_blank" rel="noreferrer">Instagram</a>
-        </div>
+      
 
-        <hr style="margin:16px 0; border:none; border-top:1px solid #eee;">
+        <hr>
 
-        <h4 style="margin-bottom:6px; color:#111;">Corporate</h4>
-        <p>If you have an inquiry about franchising, partnerships, or corporate matters, please email us at <a href="mailto:junkoucoffee@gmail.com">junkoucoffee@gmail.com</a>.</p>
+        <h4>Corporate</h4>
+        <p>
+          For franchising, partnerships, or corporate inquiries, email us at  
+          <a href="mailto:junkoucoffee@gmail.com">junkoucoffee@gmail.com</a>.
+        </p>
 
-        <h4 style="margin-top:12px; margin-bottom:6px; color:#111;">Find a store</h4>
-        <p>To find the nearest store use the store locator on the official site.</p>
-
+        <h4>Find a store</h4>
+        <p>Use our store locator to find the nearest branch.</p>
       </aside>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Jun kou Cafe. All rights reserved.</p>
+    <p>© <span id="year"></span> Jun-kou Cafe. All rights reserved.</p>
   </footer>
 
   <script>
-    // set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

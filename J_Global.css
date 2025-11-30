@@ -1,0 +1,136 @@
+/* ============================================================
+J_Style.css — Global Styles for Jun Kou Cafe Website
+Includes: Header, Navigation, Footer, Layout Grids
+============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {  /* Header / Navigator / Text  */
+  --accent: #7c6752;
+  --dark: #000000f6;
+  --muted: rgb(65, 65, 65);
+  --hero-overlay: rgba(0, 0, 0, 0.55);
+  --header-height: 72px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  background: #fff;
+}
+
+/* ------------------------------ HEADER --------------------------------*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  background: transparent;
+  z-index: 100;
+  transition: background .15s, box-shadow .25s;
+}
+
+header.scrolled {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04); 
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 34px; }
+.logo strong { color: #fff; }
+
+.nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 22px 6px;
+  transition: color .2s;
+  font-size: .95rem;
+}
+
+.nav a:hover { color: var(--accent); }
+
+header.scrolled .nav a { color: var(--dark); }
+header.scrolled .logo strong {
+  color: #000 !important;   /* Force black */
+}
+
+
+/* Sign in / Reserve button */
+.reserve-btn {
+  background: #fff;
+  color: #000000ea;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header.scrolled .reserve-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+/* Active nav link */
+.nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------- NOT-HOME PAGE ------------------------------------------------- */
+
+/*  important so navbar becomes visible  */
+body.not-home header {
+  background: #fff !important;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* Navigation text becomes black */
+body.not-home .nav a {
+  color: #000 !important;
+}
+
+body.not-home .nav a:hover {
+  color: var(--accent) !important;
+}
+
+/* Logo text black */
+body.not-home .logo strong {
+  color: #000 !important;
+}
+
+/* Reserve / Sign in button on non-home pages */
+body.not-home .reserve-btn {
+  background: #fff;
+  color: #000;
+  border: 1px solid #bbb;
+}
+body.not-home .reserve-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+body.not-home .cat-list a:hover {
+  color: var(--accent) !important;
+}

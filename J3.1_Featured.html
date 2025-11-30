@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!--
+    DEVELOPER 🔵 - JP
+    Project: Jun Kou Cafe
+    File: J3.1_Featured.html
+    Purpose: Shared copy for group work 
+  -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Jun Kou Cafe</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="J_Style.css">
+  <link rel="stylesheet" href="J_Global.css">
+</head>
+<style>
+/* ————— GLOBAL ————— */
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* ———— VIDEO HERO SECTIONS ———— */
+
+.video-hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Video */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Left-side content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 450px;
+  color: white;
+  padding-left: 60px;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.hero-btn {
+  background: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-btn:hover {
+  background: #ddd;
+}
+
+/* Fade effect at the bottom like the example */
+.video-fade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, #f8f8f8);
+  z-index: 2;
+}
+
+
+/* ————— FEATURED PRODUCTS SECTION ————— */
+
+.featured-products {
+  background: #f8f8f8;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.featured-products h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+
+</style>
+
+<body class="not-home"> 
+  <header id="site-header">
+    <div class="logo">
+      <img src="" alt="">
+      <strong>Jun Kou Cafe</strong>
+    </div>
+
+    <nav class="nav">
+      <a href="J1_Home_Page.html">Home</a>
+      <a href="J2_About_Us.html">About Us</a>
+      <a href="J3_Menu.html">Menu</a>
+      <a href="J4_FAQ.html">FAQ</a>
+      <a href="J5_Contact_Us.html">Contact Us</a>
+    </nav>
+
+    <a class="reserve-btn" href="J6_Sign_in.html">Sign in</a>
+  </header>
+
+
+<body>
+
+  <!-- SECTION 1 — HERO VIDEO -->
+  <section class="video-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="PNG_Product/3.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1>Find What’s On Your Mind</h1>
+      <p>TANGINANG PROJECT TOH!!!!!</p>
+      <a href="J3_Menu.html" class="hero-btn">Menu</a>
+    </div>
+
+    <div class="video-fade"></div>
+  </section>
+
+
+  <!-- SECTION 2 — FEATURED PRODUCTS -->
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="PNG_Product/R1.jpg" alt="">
+        <h3>KATAS NI THANOS</h3>
+      </div>
+
+      <div class="product-card">
+        <img src="PNG_Product/R2.jpg" alt="">
+        <h3>GATORADE NI, ALAM MO NA...</h3>
+      </div>
+
+      <div class="product-card">
+        <img src="PNG_Product/R3.jpg" alt="">
+        <h3>KATAS NI FRITZ</h3>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <!-- SECTION 3 — SECOND VIDEO BLOCK -->
+   
+  <section class="video-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="PNG_Product/8.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1>KATAS NI SIR JOEY</h1>
+      <p>Jun Kou Café? JUNKOU INA MO</p>
+      <a href="#" class="hero-btn">Learn More</a>
+    </div>
+
+    <div class="video-fade"></div>
+  </section>
+
+</body>
+
+
+
+
+
+
+
+
+  <footer>
+    <p>&copy; <span id="year"></span> Jun Kou Cafe — All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
